@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
     <title>Giftastic</title>
 </head>
 
@@ -70,8 +79,14 @@
                     //adds the div and the p to add the gif that appears
                     var animalGif = $("<div>");
                     var p = $("<p>").text("Rating: " + response.data[i].rating);
+                    var animalImages = response.data[i].images;
                     var animalImage = $("<img>");
-                    animalImage.attr('src', response.data[i].images.downsized.url);
+                    animalImage.attr('src', animalImages.downsized.url);
+                    animalImage.attr("data-state", "animate");
+                    animalImage.attr("data-animate", animalImages.downsized.url);
+                    //create an image of the gif
+                    animalImage.attr("data-still", animalImages.downsized_still.url);
+                    animalImage.addClass("gif");
                     animalGif.append(p);
                     animalGif.append(animalImage);
                     $("#gifPlace").append(animalGif);
@@ -79,11 +94,22 @@
             })
     });
 
-//create an image of the gif
-//run gif
-//stop gif
+    //when i click on gif
+    $(document).on("click", ".gif", function () {
+        var state = $(this).attr("data-state");
+        //run gif
+        if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+        };
+        //stop gif
+        if (state === "animate") {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+        };
+    }
+    );
 
-//cuando agrego un boton aparece el array otra vez los 4 en vez de nomas el que agregue y no funcionan los otros botones y no se agrega el texto 
 </script>
 
 </html>
