@@ -1,0 +1,42 @@
+#animals-button {
+    display: flex;
+}
+
+.form-group {
+    float: right;
+    margin: 20px;
+}
+
+.btn-info {
+    margin: 5px;
+}
+
+#typeAnimal {
+    height: 40px;
+    font-size: 20px;
+    font-family: inherit;
+}
+
+#add-animal {
+    background-color:#28a4c9;
+    color: white;
+    height: 40px;
+    font-size: 18px;
+    font-family: inherit;
+}
+
+p {
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+img {
+    max-height: 200px;
+    max-width: 200px;
+}
+
+#gifPlace {
+    max-height: 400px;
+    max-width: 300px;
+}
