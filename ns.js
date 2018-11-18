@@ -41,7 +41,7 @@
                 console.log(response);
                 for (var i = 0; i < response.data.length; i++) {
                     //adds the div and the p to add the gif that appears
-                    var animalGif = $("<div>");
+                    var animalGif = $("<div class='col-md-4'>");
                     var p = $("<p>").text("Rating: " + response.data[i].rating);
                     var animalImages = response.data[i].images;
                     var animalImage = $("<img>");

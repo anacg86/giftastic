@@ -29,14 +29,18 @@ p {
     font-family: inherit;
     font-size: 20px;
     font-weight: bold;
+    margin: 20px;
+    padding: 20px;
 }
 
 img {
     max-height: 200px;
     max-width: 200px;
+    margin:20px;
+    padding:20px;
 }
 
-#gifPlace {
-    max-height: 400px;
-    max-width: 300px;
+
+body {
+    background-color:grey;
 }
