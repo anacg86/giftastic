@@ -69,7 +69,7 @@
         console.log(x);
         //the button will show the text of the string
         //that will return a gif with ajax
-        var queryUrl = "http://api.giphy.com/v1/gifs/search?q=" + x + "&api_key=FfIZHo4MWd2HmAeP1L4bTYYAMRvoG4Z4&limit=20";
+        var queryUrl = "https://api.giphy.com/v1/gifs/search?q=" + x + "&api_key=FfIZHo4MWd2HmAeP1L4bTYYAMRvoG4Z4&limit=20";
         console.log(queryUrl);
         $.ajax({ url: queryUrl, method: "GET" })
             .done(function (response) {
